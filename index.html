@@ -1,103 +1,14 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>JSFiddle &minus; About</title>
-    <style media="screen">
-
-      body {
-        background: #20262E;
-        padding: 0 0 100px;
-        margin: 0;
-        color: #fff;
-        font-size: 14px;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";;
-      }
-
-      p {
-        font-size: 14px;
-        line-height: 22px;
-        padding: 0 0 12px;
-        margin: 0;
-      }
-
-      section {
-        clear: both;
-      }
-
-      .mCont {
-        width: 650px;
-        margin: 0 auto;
-      }
-
-      *, html, body, button, input, textarea, select {
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-      }
-
-      ul, li {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-      }
-
-      li {
-        float: left;
-        width: 25%;
-        text-align: center;
-      }
-
-      h1, h2, h3, h3 span {
-        font-weight: 200;
-      }
-
-      h1 {
-        margin: 100px 0 20px;
-        font-size: 30px;
-        font-weight: 700;
-      }
-
-      h2 {
-        font-size: 12px;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        color: rgba(255, 255, 255, 0.3);
-        padding: 40px 0 15px;
-        margin: 0;
-      }
-
-      h3 {
-      }
-
-      h3 span {
-        color: #a3a7a8;
-        font-size: 13px;
-        display: block;
-        margin-top: 5px;
-      }
-
-      a {
-        color: #0084ff;
-        text-decoration: none;
-      }
-
-      a:hover {
-        text-decoration: underline;
-      }
-
-      img {
-        overflow: hidden;
-        border-radius: 120px;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="mCont">
-      <h1>404</h1>
-
-      <section>
-        <p>That page doesn't exist.</p>
-      </section>
-    </div>
-  </body>
+<div id=outer>Digital Clock<div id=cover><div id=dt></div><div id=da></div><div id=time></div></div></div>
+<style>#outer{width:300px;text-align:center;margin:0 auto;}
+#cover{padding:4px 0;border:2px solid #111}
+#da,#dt,#time{text-align:center;padding:3px}</style>
+<script>function clock(){var date=new Date();var weekday=date.getDay();var year=date.getYear();var month=date.getMonth();var day=date.getDate();var hour=date.getHours();var minute=date.getMinutes();var second=date.getSeconds();var days=new Array ("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday" );var months=new Array("January","February","March","April","May","June","July","August","September","October","November","december");var monthname=months[month];var dayname=days[weekday];var ap;if(year<1000){year=year+1900} if(hour>=12){hour=hour-12;ap='PM';}else{ap='AM';} if(minute<10){minute="0"+minute} if(second<10){second="0"+second};
+document.getElementById('time').innerHTML=hour+" : "+ minute +" : "+second+" " +ap; 
+document.getElementById('da').innerHTML=dayname;
+document.getElementById('dt').innerHTML=monthname+" "+day+", "+year;
+document.getElementById('salute').innerHTML=sal;setTimeout("clock()",1000)}window.onload=function(){clock();}
+// Widget Code by https://karvitt.com/widgets/
+</script>
 </html>
